@@ -16,10 +16,13 @@ export const QUERY_PETS = gql`
   {
     pets {
       name
+      type
       age
       location
       gender
       description
+      location
+      fixed
     }
   }
 `;

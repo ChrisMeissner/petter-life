@@ -75,26 +75,28 @@ const resolvers = {
 
       if (context.user) {
         try {
-          const ownedPet = await Pet.create({
+          // changed from `const ownedPet` because we are just creating a new pet here
+          // that needs to be accessed by the dashboard for all users
+          const pet = await Pet.create({
             ...args,
             username: context.user.username,
           });
 
-          console.log("ownedPet", ownedPet);
+          console.log("new owned pet as pet:", pet);
 
           const user = await User.findByIdAndUpdate(
             { _id: context.user._id },
-            { $push: { ownedPets: ownedPet} },
+            // here is where we are specifying that the new pet belongs to someone's ownedPets array
+            { $push: { ownedPets: pet } },
             { new: true }
           );
-
+          
+          // this should now log the user with a populated ownedPets array
+          // that includes all data for each ownedPet
           console.log("user", user);
-          console.log("user.ownedPets", user.ownedPets);
-
-          return{ ...ownedPet._doc };
-
-          // ._doc to get raw data from object
-          // return { ...pet._doc };
+          
+          return pet;
+       
         } catch (e) {
           console.log(e);
         }
@@ -102,15 +104,20 @@ const resolvers = {
     },
 
     //add a liked pet to a user's model when they like a pet
-    addLikedPet: async (parent, args, context) => {
+    addLikedPet: async (parent, { _id }, context) => {
       if (context.user) {
-        const likedPet = await User.findOneAndUpdate(
+
+        const pet = await Pet.findById( _id );
+        
+        const user = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $push: { likedPets: pet._id } },
+          { $push: { likedPets: pet } },
           { new: true }
         );
+        console.log("user liked a pet", user);
+        return pet;
       } else {
-        return;
+        return("You must be logged in to like a pet!");
       }
     },
 
