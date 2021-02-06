@@ -1,10 +1,7 @@
 li {
   list-style: none;
   text-align: center;
-<<<<<<< HEAD
-=======
   width: 80%;
->>>>>>> master
 }
 
 .LikePetBtn {
@@ -14,16 +11,8 @@ li {
   color: #FFFFFF;
   border: none;
   border-radius: 5px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  height: 10%;
-  width: 75%;
-=======
   width: 5em;
->>>>>>> master
-=======
   width: 50%;
->>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
   margin: .5em 0em;
   padding: .5em 0em;
 }
@@ -38,10 +27,7 @@ li {
   justify-content: space-evenly;
   align-items: center;
   background-color: #FFFFFF;
-<<<<<<< HEAD
-=======
   text-align: center;
->>>>>>> master
   width: 60%;
   height: 85%;
   border-radius: 25px;
@@ -50,8 +36,6 @@ li {
 }
 
 .AvailablePetsContainer {
-<<<<<<< HEAD
-=======
   font-family: serif;
   color: #69D3C4;
   text-align: center;
@@ -60,48 +44,20 @@ li {
 }
 
 .AvailablePetsTitle {
->>>>>>> master
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-<<<<<<< HEAD
-  overflow: scroll;
-}
-
-.AvailablePetsTitle {
-=======
->>>>>>> master
   font-family: serif;
   text-align: center;
   color: #69D3C4;
   font-size: 1.5em;
-<<<<<<< HEAD
-=======
   height: 75%;
->>>>>>> master
   width: 100%;
   padding: .25em;
 }
 
-<<<<<<< HEAD
-.PetListings {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  font-family: serif;
-  color: #69D3C4;
-  height: 85%;
-  width: 95%;
-  overflow: scroll;
-  text-align: center;
-}
-
-.SinglePetListing{
-=======
 .SinglePetListings{
->>>>>>> master
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -111,14 +67,9 @@ li {
   border: solid 5px rgba(0, 255, 234, 0.4);
   border-radius: 25px;
   padding: .5em;
-<<<<<<< HEAD
-  margin: .5em;
-  width: 80%;
-=======
   margin: auto;
   width: 90%;
   margin-top: .5em;
->>>>>>> master
 }
 
 .PetInfo {
@@ -126,31 +77,21 @@ li {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  text-align: left;
-=======
   text-align: center;
->>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
   overflow: scroll;
   margin: .25em;
   font-size: 1.25em;
 }
 
-<<<<<<< HEAD
 .PetInfoSpecs {
   text-align: center;
-=======
   text-align: center;
   overflow-y: scroll;
   margin: .25em;
   font-size: 1.25em;
   width: auto;
->>>>>>> master
 }
 
-=======
->>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
 .CreateListingBtn {
   text-align: center;
   display: flex;

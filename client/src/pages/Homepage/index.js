@@ -17,14 +17,6 @@ function Homepage() {
             <UserInfo />
             <PetList />
           </div>
-<<<<<<< HEAD
-          {/* <button className="HomepageLogoutBtn">
-              <a href="/" onClick={() => Auth.logout()}>
-                  Logout
-              </a>
-          </button> */}
-=======
->>>>>>> master
         </div>
       );
     } else {

@@ -22,10 +22,7 @@ img {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-<<<<<<< HEAD
-=======
   height: 100%;
->>>>>>> master
 }
 
 .AboutInnerContainer {
@@ -53,10 +50,7 @@ img {
   text-align: center;
   color: #69D3C4;
   font-size: 1.25em;
-<<<<<<< HEAD
-=======
   height: 10%;
->>>>>>> master
 }
 
 .CreatorInfo {
@@ -72,10 +66,7 @@ img {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-<<<<<<< HEAD
-=======
   height: 75%;
->>>>>>> master
 }
 
 .CreatorRow {
