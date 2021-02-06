@@ -16,14 +16,14 @@ function SavedPets() {
         update(cache, { data: { deleteLikedPet } }) {
             // read what's currently in the cache
             try {
-                const { pets } = cache.readQuery({ query: QUERY_PETS });
+                const { me } = cache.readQuery({ query: QUERY_ME });
 
                 // prepend the newest thought to the front of the array
                 cache.writeQuery({
-                    query: QUERY_PETS,
-                    data: { pets: [deleteLikedPet, ...pets] }
+                    query: QUERY_ME,
+                    data: { me: [deleteLikedPet, ...me.likedPets] }
                 });
-                console.log(globalStore.user);
+
             } catch (e) {
                 console.error(e);
             }
@@ -61,7 +61,7 @@ function SavedPets() {
                 <div className="SavedPetTitle">Your Saved Pets</div>
                 <div className="SavedPets">
                     {globalStore.user === null ? <p>Loading</p> :
-                    globalStore.user.likedPets.length === 0 ? <p>You have no saved pets</p> :
+                    globalStore.user.likedPets.length === 0 ? <p>You have no saved pets. Check out available pets on the homepage.</p> :
                         globalStore.user.likedPets.map(pet => (
                             <div className="SinglePetSaved" key={pet._id}>
                                 <ul className="PetInfo">
