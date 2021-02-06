@@ -145,6 +145,25 @@ const resolvers = {
         }
       }
     },
+
+
+     //delete a liked pet from a user's model
+    deleteLikedPet: async (parent, { _id }, context) => {
+      if (context.user) {
+
+        const pet = await Pet.findById( _id );
+        
+        const user = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { likedPets: pet } },
+          { new: true }
+        );
+        return pet;
+      } else {
+        return("You must be logged in to like a pet!");
+      }
+    },  
+
   },
 };
 

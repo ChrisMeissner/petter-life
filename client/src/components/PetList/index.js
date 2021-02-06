@@ -9,7 +9,6 @@ import './index.css';
 const PetList = ({ pets }) => {
 
     const { loading, data } = useQuery(QUERY_PETS);
-
     const [addLikedPet] = useMutation(ADD_LIKED_PET);
 
 
@@ -17,10 +16,10 @@ const PetList = ({ pets }) => {
         return <p></p>
     }
 
-    // create function to handle saving a pet to our database
+    // function to handle saving a pet to our database
     const handleLikedPet = async (petId) => {
         try {
-            const { data } = await addLikedPet({
+            await addLikedPet({
                 variables: {
                   _id: petId
                 },
@@ -46,7 +45,6 @@ const PetList = ({ pets }) => {
                                     <li>Contact: {pet.petemail}</li>
                                 </ul>
                                 <button
-                                    // disabled={false}
                                     className='LikePetBtn'
                                     onClick={() => handleLikedPet(pet._id)}>
                                         Save Pet

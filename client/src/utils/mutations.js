@@ -54,3 +54,19 @@ export const ADD_LIKED_PET = gql`
     }
   }
 `;
+
+
+export const DELETE_LIKED_PET = gql`
+  mutation deleteLikedPet($_id: ID!) {
+    deleteLikedPet(_id: $_id) {
+      name
+      type
+      description
+      location
+      age
+      gender
+      petemail
+      fixed
+    }
+  }
+`;

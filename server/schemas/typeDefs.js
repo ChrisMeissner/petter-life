@@ -46,6 +46,7 @@ const typeDefs = gql`
     addOwnedPet(name: String!, type: String!, age: Int!, gender: String!, fixed: String!, location: Int!, description: String!, petemail: String!): Pet
     addLikedPet(_id: ID!) : Pet    
     deleteOwnedPet(petId: ID!): User
+    deleteLikedPet(_id: ID!): Pet
   }
 `;
 

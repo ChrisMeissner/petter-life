@@ -11,7 +11,7 @@ function AddPetForm(props) {
   const handleFormSubmit = async event => {
     event.preventDefault();
 
-    const result = await addOwnedPet({
+    await addOwnedPet({
       variables: {
         name: formState.petName,
         type: formState.petType,
