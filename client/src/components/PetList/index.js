@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { ADD_LIKED_PET } from '../../utils/mutations';
 import { QUERY_PETS } from "../../utils/queries";
-import { savePetIds, getSavedPetIds } from '../../utils/localStorage';
+// import { getSavedPetIds } from '../../utils/localStorage';
 import './index.css';
 
 
 const PetList = ({ pets }) => {
 
     const { loading, data } = useQuery(QUERY_PETS);
-    console.log('pet data', data);
 
     const [addLikedPet] = useMutation(ADD_LIKED_PET);
-
-    const [savedPetIds, setSavedPetIds] = useState(getSavedPetIds());
 
 
     if (!data) {
@@ -23,16 +20,12 @@ const PetList = ({ pets }) => {
 
     // create function to handle saving a pet to our database
     const handleLikedPet = async (petId) => {
-        console.log(petId);
-       
         try {
             const { data } = await addLikedPet({
                 variables: {
                   _id: petId
                 },
             });
-            console.log('data44', data);
-
         }
         catch (error) {
             console.error(error);

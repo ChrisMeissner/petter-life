@@ -6,8 +6,9 @@ import { useStoreContext } from "../../utils/GlobalState"
 import { Link } from 'react-router-dom';
 
 function Header() {
-  const { loading, error, data } = useQuery(QUERY_ME)
-  const { globalStore, dispatch } = useStoreContext()
+  const { loading, data } = useQuery(QUERY_ME)
+  const { dispatch } = useStoreContext();
+  
   useEffect(function () {
   
     if (data !== undefined) {
@@ -17,7 +18,6 @@ function Header() {
       })
     } 
   }, [data]);
-  console.log(data);
   return (
     <div className="HeaderContainer">
       {loading ? <p></p>: <p></p>}

@@ -1,12 +1,11 @@
 import React from 'react';
 import './index.css';
 import { useStoreContext } from "../../utils/GlobalState"
-import  globalStore  from "../../utils/GlobalState"
 import { Link } from 'react-router-dom';
 
 function SavedPets() {
 
-    const { globalStore, dispatch } = useStoreContext();
+    const { globalStore } = useStoreContext();
 
     return (
         <div className="SavedPetsSection">

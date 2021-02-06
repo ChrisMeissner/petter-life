@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useReducer } from "react";
 const LOGIN = "LOGIN";
-const LOGOUT = "LOGOUT";
 
 // instantiate the global state object
 const StoreContext = createContext();

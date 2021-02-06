@@ -9,9 +9,7 @@ function AddPetForm(props) {
   const [addOwnedPet] = useMutation(ADD_OWNED_PET);
   const history = useHistory();
   const handleFormSubmit = async event => {
-    console.log("form submit is working on click")
     event.preventDefault();
-    console.log(formState)
 
     const result = await addOwnedPet({
       variables: {
@@ -26,7 +24,6 @@ function AddPetForm(props) {
       }
     });
     history.push('/');
-    console.log(result);
   }
     
 

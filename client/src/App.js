@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
@@ -13,7 +13,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { Store } from "./utils/GlobalState";
-import Auth from "../src/utils/auth"
 
 const client = new ApolloClient({
   request: (operation) => {
