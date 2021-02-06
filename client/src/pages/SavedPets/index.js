@@ -60,7 +60,7 @@ function SavedPets() {
                 <div className="SavedPetTitle">Your Saved Pets</div>
                 <div className="SavedPets">
                     {globalStore.user === null ? <p>Loading</p> :
-                    globalStore.user.likedPets.length === 0 ? <p>You have no saved pets. Check out available pets on the homepage.</p> :
+                        // globalStore.user.likedPets.length === 0 ? <p>You have no saved pets. Check out available pets on the homepage.</p> :
                         globalStore.user.likedPets.map(pet => (
                             <div className="SinglePetSaved" key={pet._id}>
                                 <ul className="PetInfo">
@@ -78,7 +78,7 @@ function SavedPets() {
                                 </ul>
                             </div>
                         ))
-                        }
+                    }
                 </div>
                 <Link to="/" className="CreateListingBtn">Home</Link>
             </div>
