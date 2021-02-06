@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .AddPetSection {
     display: flex;
     flex-direction: row;
@@ -7,6 +8,11 @@
     display: flex;
     flex-direction: column;
 >>>>>>> master
+=======
+.SavedPetsSection {
+    display: flex;
+    flex-direction: ;
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
     justify-content: space-around;
     align-items: center;
     background-image: url('../../../src/assets/cover-image/petterLife-bg-13\ 2.png');
@@ -35,8 +41,11 @@
     color: #69D3C4;
     font-size: 150%;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
 }
 
 .SavedPets {
@@ -101,5 +110,9 @@
 .CreateListingBtn:hover {
   box-shadow: 0 0 10px rgba(0, 255, 234, 0.8);
 }
+<<<<<<< HEAD
   
 >>>>>>> master
+=======
+  
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce

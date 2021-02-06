@@ -10,12 +10,17 @@ function Login(props) {
   const [formState, setFormState] = useState({ username: '', password: '' })
   const [login, { error }] = useMutation(LOGIN);
 <<<<<<< HEAD
+<<<<<<< HEAD
   const { globalStore, dispatch } = useStoreContext()
   const history = useHistory()
 =======
   const { globalStore, dispatch } = useStoreContext();
   const history = useHistory();
 >>>>>>> master
+=======
+  const { globalStore, dispatch } = useStoreContext();
+  const history = useHistory();
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
   console.log(globalStore, dispatch);
   const handleFormSubmit = async event => {
     event.preventDefault();

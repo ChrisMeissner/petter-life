@@ -7,18 +7,27 @@ export const QUERY_ME = gql`
       email
       likedPets{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        _id
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
         name
         type
         age
+        gender
         location
         fixed
+        description
       }
        ownedPets{
+         _id
         name
         type
         age
+        gender
         location
         fixed
+<<<<<<< HEAD
 =======
         _id
         name
@@ -41,6 +50,9 @@ export const QUERY_ME = gql`
         petemail
         description
 >>>>>>> master
+=======
+        description
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
       }
     }
   }

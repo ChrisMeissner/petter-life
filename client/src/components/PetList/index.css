@@ -15,11 +15,15 @@ li {
   border: none;
   border-radius: 5px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   height: 10%;
   width: 75%;
 =======
   width: 5em;
 >>>>>>> master
+=======
+  width: 50%;
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
   margin: .5em 0em;
   padding: .5em 0em;
 }
@@ -83,8 +87,7 @@ li {
 <<<<<<< HEAD
 .PetListings {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   font-family: serif;
@@ -124,12 +127,17 @@ li {
   justify-content: space-evenly;
   align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   text-align: left;
+=======
+  text-align: center;
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
   overflow: scroll;
   margin: .25em;
   font-size: 1.25em;
 }
 
+<<<<<<< HEAD
 .PetInfoSpecs {
   text-align: center;
 =======
@@ -141,6 +149,8 @@ li {
 >>>>>>> master
 }
 
+=======
+>>>>>>> ea0aadcc16ee394d438da6294bc85b93334d50ce
 .CreateListingBtn {
   text-align: center;
   display: flex;
