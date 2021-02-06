@@ -18,10 +18,10 @@ function SavedPets() {
             try {
                 const { me } = cache.readQuery({ query: QUERY_ME });
 
-                // prepend the newest thought to the front of the array
+                // pull the pet from user array
                 cache.writeQuery({
                     query: QUERY_ME,
-                    data: { me: [deleteLikedPet, ...me.likedPets] }
+                    data: { me: [deleteLikedPet, ...me] }
                 });
 
             } catch (e) {
@@ -30,7 +30,6 @@ function SavedPets() {
 
             //update logged in user's cache, deleting pet from array
             const { me } = cache.readQuery({ query: QUERY_ME });
-            console.log('me', me);
             cache.writeQuery({
                 query: QUERY_ME,
                 data: { me: { ...me, likedPets: [...me.likedPets, deleteLikedPet] } }
