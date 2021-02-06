@@ -1,10 +1,9 @@
 const jwt = require('jsonwebtoken');
 require("dotenv").config();
 
-// const secret = process.env.SECRET;
-// const expiration = process.env.EXPIRATION;
-const secret = "secret";
-const expiration = "10h"
+const secret = process.env.SECRET;
+const expiration = process.env.EXPIRATION;
+
 module.exports = {
   authMiddleware: function ({ req }) {
     // allows token to be sent via req.body, req.query, or headers

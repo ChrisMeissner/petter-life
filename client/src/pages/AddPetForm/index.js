@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_OWNED_PET } from '../../utils/mutations';
 import './index.css';
 
 function AddPetForm(props) {
-  const [formState, setFormState] = useState({ petName: '', petType: '', petAge: '', petDescription: '', petLocation: '', petFixed: 'Yes', petGender: 'Male'});
+  const [formState, setFormState] = useState({ petName: '', petType: '', petAge: '', petDescription: '', petLocation: '', petFixed: 'Yes', petEmail: '', petGender: 'Male'});
   const [addOwnedPet] = useMutation(ADD_OWNED_PET);
+  const history = useHistory();
   const handleFormSubmit = async event => {
-    console.log("form submit is working on click")
     event.preventDefault();
-    console.log(formState)
 
     const result = await addOwnedPet({
       variables: {
@@ -20,11 +19,11 @@ function AddPetForm(props) {
         gender: formState.petGender,
         location: +formState.petLocation,
         description: formState.petDescription,
+        petemail: formState.petEmail,
         fixed: formState.petFixed
       }
     });
-
-    console.log(result);
+    history.push('/');
   }
     
 
@@ -101,6 +100,17 @@ return (
                 name="petLocation"
                 type="input"
                 value={formState.petLocation}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="AddPetEmail">
+              <label htmlFor="petEmail">Email</label>
+              <input
+                className="AddPetEmailInputField"
+                id="petEmail"
+                name="petEmail"
+                type="email"
+                value={formState.petEmail}
                 onChange={handleChange}
               />
             </div>

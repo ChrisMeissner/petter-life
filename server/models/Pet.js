@@ -29,6 +29,10 @@ const petSchema = new Schema(
       type: Number,
       required: true,
     },
+    petemail: {
+      type: String,
+      required: true
+    },
     description: {
       type: String,
       required: true,

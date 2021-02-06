@@ -1,22 +1,10 @@
 import React, { createContext, useContext, useReducer } from "react";
 const LOGIN = "LOGIN";
-const LOGOUT = "LOGOUT";
 
 // instantiate the global state object
 const StoreContext = createContext();
-// const { Provider } = StoreContext;
+
 const initialState = { user: null };
-//action object- { type: "", payload: }
-// VVV From Shop-Shop
-// const StoreProvider = ({ value = [], ...props }) => {
-//   const [state, dispatch] = useProductReducer({
-//     products: [],
-//     categories: [],
-//     currentCategory: ''
-//   });
-//   console.log(state);
-//   return <Provider value={[state, dispatch]} {... props} />;
-// };
 
 const useStoreContext = () => {
   return useContext(StoreContext);

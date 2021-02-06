@@ -6,6 +6,7 @@ export const QUERY_ME = gql`
       username
       email
       likedPets{
+<<<<<<< HEAD
         name
         type
         age
@@ -18,6 +19,28 @@ export const QUERY_ME = gql`
         age
         location
         fixed
+=======
+        _id
+        name
+        type
+        age
+        gender
+        location
+        fixed
+        petemail
+        description
+      }
+       ownedPets{
+         _id
+        name
+        type
+        age
+        gender
+        location
+        fixed
+        petemail
+        description
+>>>>>>> master
       }
     }
   }
@@ -38,6 +61,7 @@ export const QUERY_USER = gql`
 export const QUERY_PETS = gql`
   {
     pets {
+      _id
       name
       type
       age
@@ -45,6 +69,7 @@ export const QUERY_PETS = gql`
       gender
       description
       location
+      petemail
       fixed
     }
   }

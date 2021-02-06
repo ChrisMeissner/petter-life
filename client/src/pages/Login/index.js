@@ -9,15 +9,23 @@ import { useStoreContext } from '../../utils/GlobalState'
 function Login(props) {
   const [formState, setFormState] = useState({ username: '', password: '' })
   const [login, { error }] = useMutation(LOGIN);
+<<<<<<< HEAD
   const { globalStore, dispatch } = useStoreContext()
   const history = useHistory()
+=======
+  const { globalStore, dispatch } = useStoreContext();
+  const history = useHistory();
+>>>>>>> master
   console.log(globalStore, dispatch);
   const handleFormSubmit = async event => {
     event.preventDefault();
     try {
       const mutationResponse = await login({ variables: { username: formState.username, password: formState.password } })
       const token = mutationResponse.data.login.token;
+<<<<<<< HEAD
       // console.log(mutationResponse.data.login);
+=======
+>>>>>>> master
       dispatch({
         type: "LOGIN",
         payload: mutationResponse.data.login.user
