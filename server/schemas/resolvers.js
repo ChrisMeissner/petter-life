@@ -8,8 +8,12 @@ const resolvers = {
     me: async (parent, args, context) => {
       if (context.user) {
         
-        const user = await User.findById(context.user._id);
-        return user;
+        const userData = await User.findById(context.user._id)
+        .select('-__v -password')
+        .populate('likedPets')
+        .populate('ownedPets');
+
+        return userData;
       }
       throw new AuthenticationError("Not logged in");
       

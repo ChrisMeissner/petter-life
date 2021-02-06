@@ -4,12 +4,39 @@ import { useStoreContext } from "../../utils/GlobalState"
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 import { DELETE_LIKED_PET } from '../../utils/mutations';
+import { QUERY_PETS, QUERY_ME } from '../../utils/queries';
+
 
 
 function SavedPets() {
-
     const { globalStore } = useStoreContext();
-    const [deleteLikedPet] = useMutation(DELETE_LIKED_PET);
+
+    const [deleteLikedPet] = useMutation(DELETE_LIKED_PET, {
+
+        update(cache, { data: { deleteLikedPet } }) {
+            // read what's currently in the cache
+            try {
+                const { pets } = cache.readQuery({ query: QUERY_PETS });
+
+                // prepend the newest thought to the front of the array
+                cache.writeQuery({
+                    query: QUERY_PETS,
+                    data: { pets: [deleteLikedPet, ...pets] }
+                });
+                console.log(globalStore.user);
+            } catch (e) {
+                console.error(e);
+            }
+
+            //update logged in user's cache, deleting pet from array
+            const { me } = cache.readQuery({ query: QUERY_ME });
+            console.log('me', me);
+            cache.writeQuery({
+                query: QUERY_ME,
+                data: { me: { ...me, likedPets: [...me.likedPets, deleteLikedPet] } }
+            });
+        }
+    });
 
 
     // function to delete pet from Saved Pets
@@ -20,12 +47,13 @@ function SavedPets() {
                     _id: petId
                 },
             });
-            console.log(result);
         }
         catch (error) {
             console.error(error);
         }
     };
+
+    console.log('Global Store', globalStore);
 
     return (
         <div className="SavedPetsSection">
@@ -33,6 +61,7 @@ function SavedPets() {
                 <div className="SavedPetTitle">Your Saved Pets</div>
                 <div className="SavedPets">
                     {globalStore.user === null ? <p>Loading</p> :
+                    globalStore.user.likedPets.length === 0 ? <p>You have no saved pets</p> :
                         globalStore.user.likedPets.map(pet => (
                             <div className="SinglePetSaved" key={pet._id}>
                                 <ul className="PetInfo">
@@ -46,10 +75,11 @@ function SavedPets() {
                                     <button
                                         className='DeletePetBtn'
                                         onClick={() => deletePetHandler(pet._id)}>
-                                    Delete Pet</button>
+                                        Delete Pet</button>
                                 </ul>
                             </div>
-                        ))}
+                        ))
+                        }
                 </div>
                 <Link to="/" className="CreateListingBtn">Home</Link>
             </div>

@@ -13,7 +13,7 @@ const useStoreContext = () => {
 function reducer(state, action) {
   switch (action.type) {
     case LOGIN:
-      console.log(action);
+      // console.log(action);
       return {
         ...state,
         user: action.payload,

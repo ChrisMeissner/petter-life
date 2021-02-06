@@ -119,3 +119,7 @@
 .DeletePetBtn:hover {
   box-shadow: 0 0 10px rgba(0, 255, 234, 0.8);
 }
+
+.NoPets {
+  padding-top: 2em;
+}
